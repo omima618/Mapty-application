@@ -75,7 +75,7 @@ class APP {
     #map;
     #mapEvent;
     #workouts = [];
-    #zoomLevel = 10;
+    #zoomLevel = 13;
     constructor() {
         // get current position
         this._getPosition();
@@ -311,7 +311,7 @@ class APP {
         if (e.target.classList.contains("close-message"))
             alertMessage.classList.add("hidden");
     }
-    // onclick remove workout 
+    // onclick remove workout
     _removeWorkout(e) {
         if (e.target.classList.contains("remove-workout")) {
             // get index of workout in workouts array
@@ -320,7 +320,7 @@ class APP {
             );
             // remove this workout item from the array
             this.#workouts.splice(workoutToRemove, 1);
-            // update local storage 
+            // update local storage
             this._addDataToLocalStorage();
             // reload page
             location.reload();
