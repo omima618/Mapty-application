@@ -24,49 +24,51 @@
 </head>
 
 <body>
-  <div class="sidebar">
-    <img src="logo.png" alt="Logo" class="logo" />
-    <div class="delete" title="Remove all workouts">
-      <svg class="remove-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <g fill='#ffb545'>
-          <path d="M16 5s-1-2-4-2-4 2-4 2H5l.4 2h13.3l.3-2h-3zM9.4 5S10 4 12 4s2.6 1 2.6 1H9.4zM8 21h8l2.4-13H5.6z">
-          </path>
-        </g>
-      </svg>
+  <main>
+    <div class="sidebar">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <div class="delete" title="Remove all workouts">
+        <svg class="remove-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <g fill='#ffb545'>
+            <path d="M16 5s-1-2-4-2-4 2-4 2H5l.4 2h13.3l.3-2h-3zM9.4 5S10 4 12 4s2.6 1 2.6 1H9.4zM8 21h8l2.4-13H5.6z">
+            </path>
+          </g>
+        </svg>
+      </div>
+      <ul class="workouts">
+        <form class="form hidden">
+          <div class="form__row">
+            <label class="form__label">Type</label>
+            <select class="form__input form__input--type">
+              <option value="running">Running</option>
+              <option value="cycling">Cycling</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label class="form__label">Distance</label>
+            <input class="form__input form__input--distance" placeholder="km" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Duration</label>
+            <input class="form__input form__input--duration" placeholder="min" />
+          </div>
+          <div class="form__row">
+            <label class="form__label">Cadence</label>
+            <input class="form__input form__input--cadence" placeholder="step/min" />
+          </div>
+          <div class="form__row form__row--hidden">
+            <label class="form__label">Elev Gain</label>
+            <input class="form__input form__input--elevation" placeholder="meters" />
+          </div>
+          <button class="form__btn">OK</button>
+        </form>
+      </ul>
+      <p class="copyright">
+        &copy; Copyrigh 2022
+      </p>
     </div>
-    <ul class="workouts">
-      <form class="form hidden">
-        <div class="form__row">
-          <label class="form__label">Type</label>
-          <select class="form__input form__input--type">
-            <option value="running">Running</option>
-            <option value="cycling">Cycling</option>
-          </select>
-        </div>
-        <div class="form__row">
-          <label class="form__label">Distance</label>
-          <input class="form__input form__input--distance" placeholder="km" />
-        </div>
-        <div class="form__row">
-          <label class="form__label">Duration</label>
-          <input class="form__input form__input--duration" placeholder="min" />
-        </div>
-        <div class="form__row">
-          <label class="form__label">Cadence</label>
-          <input class="form__input form__input--cadence" placeholder="step/min" />
-        </div>
-        <div class="form__row form__row--hidden">
-          <label class="form__label">Elev Gain</label>
-          <input class="form__input form__input--elevation" placeholder="meters" />
-        </div>
-        <button class="form__btn">OK</button>
-      </form>
-    </ul>
-    <p class="copyright">
-      &copy; Copyrigh 2022
-    </p>
-  </div>
-  <div id="map"></div>
+    <div id="map"></div>
+  </main>
   <div class="message-overlay hidden">
     <div class="message-container">
       <div class="message-logo">

@@ -25,13 +25,9 @@ body {
     color: var(--color-light--2);
     font-weight: 400;
     line-height: 1.6;
-    height: 100vh;
     overscroll-behavior-y: none;
-
     background-color: #fff;
     padding: 2.5rem;
-
-    display: flex;
 }
 
 /* GENERAL */
@@ -39,10 +35,15 @@ a:link,
 a:visited {
     color: var(--color-brand--1);
 }
-
+/* MAIN */
+main {
+    width: 100%;
+    display: flex;
+}
 /* SIDEBAR */
 .sidebar {
-    flex-basis: 50rem;
+    width: 35%;
+    height: 100vh;
     background-color: var(--color-dark--1);
     padding: 3rem 5rem 3rem 5rem;
     display: flex;
@@ -69,12 +70,13 @@ a:visited {
     position: relative;
     background-color: var(--color-dark--2);
     border-radius: 5px;
-    padding: 1.5rem 2.25rem;
+    padding: 1.5rem 1rem;
     margin-bottom: 1.75rem;
     cursor: pointer;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0.75rem 1.5rem;
+    gap: 0.75rem 1rem;
+    overflow-x: auto;
 }
 .workout--running {
     border-left: 5px solid var(--color-brand--2);
@@ -123,7 +125,6 @@ a:visited {
     border-radius: 5px;
     padding: 1.5rem 2.75rem;
     margin-bottom: 1.75rem;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem 2.5rem;
@@ -196,11 +197,42 @@ a:visited {
 
 /* MAP */
 #map {
-    flex: 1;
-    height: 100%;
+    width: 65%;
+    height: 100vh;
     background-color: var(--color-light--1);
 }
-
+/* responsive */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 50%;
+    }
+    #map {
+        width: 50%;
+    }
+}
+@media (max-width: 991px) {
+    main {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        padding: 3rem 1rem 3rem 1rem;
+    }
+    #map {
+        width: 100%;
+    }
+}
+@media (max-width: 767px) {
+    body {
+        padding: 1.5rem;
+    }
+    .sidebar {
+        padding: 3rem 1rem 3rem 1rem;
+    }
+    .form {
+        gap: 0.5rem 1rem;
+    }
+}
 /* Popup width is defined in JS using options */
 .leaflet-popup .leaflet-popup-content-wrapper {
     background-color: var(--color-dark--1);
